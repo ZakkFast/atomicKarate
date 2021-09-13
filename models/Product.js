@@ -24,7 +24,7 @@ Product.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-        isNumeric: true,
+        isDecimal: true,
       },
     },
     stock: {
@@ -40,6 +40,7 @@ Product.init(
       references: {
         model: "category",
         key: "id",
+        unique: false, //Do we need need this?
       },
     },
   },
